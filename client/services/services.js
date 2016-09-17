@@ -56,6 +56,9 @@ angular.module("crowdcart.services",[])
 
 
 })
+.factory('chatSocket', ['socketFactory', function(socketFactory){
+  return socketFactory();
+}])
 
 .factory("Lists", function($http) {
 

@@ -4,8 +4,10 @@ angular.module("crowdcart", [
   "crowdcart.lists",
   "crowdcart.jobs",
   "crowdcart.services",
+  "crowdcart.livechatController",
   "ngRoute",
-  "ui.bootstrap"
+  "ui.bootstrap",
+  "btford.socket-io"
 ])
 
 //config/routing
@@ -48,6 +50,11 @@ angular.module("crowdcart", [
       controller: 'ListsController'
       // // authentication removed to be sharable link
       // authenticate: true
+    })
+    .when('/livechat',{
+      templateUrl: 'chat/chat.html',
+      controller: 'livechatController',
+      authenticate: true
     })
 
     .otherwise({

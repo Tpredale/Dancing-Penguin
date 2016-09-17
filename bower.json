@@ -1,0 +1,20 @@
+{
+  "name": "CrowdCart",
+  "description": "Shopping Web App",
+  "main": "index.html",
+  "authors": [
+    "Team Party Parrot"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/hrr18-partyparrot/Dancing-Penguin",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-socket-io": "^0.7.0"
+  }
+}

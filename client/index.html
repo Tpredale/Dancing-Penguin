@@ -52,7 +52,11 @@
 
 
     <div ng-view></div>
-
+    <!-- Socket.io CDN -->
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Angular core components -->
+    <script src= '/node_modules/angular-socket-io/socket.js'></script>
     <!-- angular vs 1.5.8; need to match routes -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 
@@ -75,6 +79,7 @@
     <script src="auth/auth.js"></script>
     <script src="lists/lists.js"></script>
     <script src="jobs/jobs.js"></script>
+    <script src="chat/livechatController.js"></script>
     <script src="services/services.js"></script>
     <script src="app.js"></script>
   </body>
