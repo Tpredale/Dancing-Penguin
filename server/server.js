@@ -1,14 +1,35 @@
 // require express, mongoose, middleware, routes
 var express = require('express');
 var middleware = require('./config/middleware.js');
+var mongoose = require('mongoose');
 var routes = require('./config/routes.js');
 var app = express();
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
+var server = require('http').createServer(app);
 var users = [];
 
 
-// start express
+// set mongoURI
+var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/crowdcart';
+
+// connect db
+mongoose.connect(mongoURI);
+
+// set port
+var port = process.env.PORT || 8080;
+
+// listen on port
+server.listen(port);
+
+console.log("Server is listening on port " + port);
+
+
+// set middleware
+middleware(app, express);
+
+// set routes
+routes(app, express);
+
+var io = require('socket.io')(server);
 
 io.on('connection', function(socket){
   var username = '';
@@ -41,11 +62,7 @@ io.on('connection', function(socket){
 });
 
 
-// set middleware
-middleware(app, express);
 
-// set routes
-routes(app, express);
 
 // export app
 module.exports = server;

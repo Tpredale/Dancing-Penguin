@@ -1,3 +1,5 @@
+
+
 angular.module("crowdcart.livechatController", [])
 
 .controller('livechatController', ['$scope', 'chatSocket', function($scope, chatSocket){
